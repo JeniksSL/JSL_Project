@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "535953953290",
+    "project_id": "jsl-project-55c77",
+    "storage_bucket": "jsl-project-55c77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535953953290:android:842f2aa6342c8b731085f3",
+        "android_client_info": {
+          "package_name": "com.iba.jslproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgO8uAIzwK6FPu5fgI-EYVtrinOwBwsgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
