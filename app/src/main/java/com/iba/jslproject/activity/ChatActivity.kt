@@ -38,7 +38,7 @@ class ChatActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow
+                R.id.nav_contacts, R.id.nav_chats, R.id.sign_off
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
