@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_contacts"
-        android:name="com.iba.jslproject.activity.ui.home.HomeFragment"
+        android:name="com.iba.jslproject.activity.ui.home.ChatFragment"
         android:label="@string/menu_contacts"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_chat" />
 
     <fragment
         android:id="@+id/nav_chats"
-        android:name="com.iba.jslproject.activity.ui.gallery.GalleryFragment"
+        android:name="com.iba.jslproject.activity.ui.gallery.ContactsFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_contacts" />
 
     <fragment
         android:id="@+id/sign_off"
-        android:name="com.iba.jslproject.activity.ui.slideshow.SlideshowFragment"
+        android:name="com.iba.jslproject.activity.ui.slideshow.SignOffFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_sign_off" />
 </navigation>

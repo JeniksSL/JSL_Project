@@ -1,4 +1,4 @@
-package com.iba.jslproject.activity.ui.gallery
+package com.iba.jslproject.activity.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.iba.jslproject.databinding.FragmentGalleryBinding
+import com.iba.jslproject.databinding.FragmentChatBinding
 
-class GalleryFragment : Fragment() {
+class ChatFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentChatBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,14 +22,14 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+        val chatViewModel =
+            ViewModelProvider(this).get(ChatViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentChatBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textHome
+        chatViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
