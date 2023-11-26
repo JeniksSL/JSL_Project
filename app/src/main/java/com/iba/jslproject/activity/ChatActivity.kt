@@ -26,6 +26,7 @@ class ChatActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarChat.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.appBarChat.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
