@@ -1,12 +1,14 @@
-package com.iba.jslproject.activity.ui.gallery
+package com.iba.jslproject.activity.ui.contacts
 
+import android.graphics.drawable.GradientDrawable.Orientation
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.Firebase
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -25,7 +27,7 @@ class ContactsFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    lateinit var textView: TextView
+    lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,10 +41,11 @@ class ContactsFragment : Fragment() {
         val root: View = binding.root
 
 
-        textView = binding.rwContacts
-        contactsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        recyclerView = binding.rwContacts
+        recyclerView.layoutManager=LinearLayoutManager(context)
+        /*contactsViewModel.text.observe(viewLifecycleOwner) {
+            recyclerView.text = it
+        }*/
         return root
     }
 
@@ -60,16 +63,20 @@ class ContactsFragment : Fragment() {
             .equalTo("John")
             .addValueEventListener(object : ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
+                    val adapter = ContactsAdapter();
                     if (snapshot.exists()) {
                         val userList = snapshot
                             .children
                             .map { it-> it.getValue(User::class.java).let { it!! }}
                             .toList()
                         Timber.d(userList.toString())
-                        textView.text=userList.joinToString(separator = ", ")
+                        adapter.users=userList
+                        recyclerView.adapter=adapter
                     } else {
                         Timber.e("Contacts snapshot doesn't exist")
                     }
+
+
                 }
                 override fun onCancelled(error: DatabaseError) {
                     Timber.e("Database error")

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_contacts"
-        android:name="com.iba.jslproject.activity.ui.gallery.ContactsFragment"
+        android:name="com.iba.jslproject.activity.ui.contacts.ContactsFragment"
         android:label="@string/menu_contacts"
         tools:layout="@layout/fragment_chat" />
 

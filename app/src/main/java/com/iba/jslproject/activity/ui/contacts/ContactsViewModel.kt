@@ -1,4 +1,4 @@
-package com.iba.jslproject.activity.ui.gallery
+package com.iba.jslproject.activity.ui.contacts
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
