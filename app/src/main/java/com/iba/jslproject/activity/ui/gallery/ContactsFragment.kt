@@ -39,7 +39,7 @@ class ContactsFragment : Fragment() {
         val root: View = binding.root
 
 
-        textView = binding.textGallery
+        textView = binding.rwContacts
         contactsViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
@@ -72,7 +72,7 @@ class ContactsFragment : Fragment() {
                     }
                 }
                 override fun onCancelled(error: DatabaseError) {
-                    TODO("Not yet implemented")
+                    Timber.e("Database error")
                 }
             })
     }
